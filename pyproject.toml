@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "sentry-dramatiq-cron-logger"
-description = ''
+description = 'Sentry Cron Logging Package for Dramatiq Actors'
 readme = "README.md"
 requires-python = ">=3.7"
 license = "MIT"
@@ -23,7 +23,7 @@ classifiers = [
   "Programming Language :: Python :: Implementation :: CPython",
   "Programming Language :: Python :: Implementation :: PyPy",
 ]
-dependencies = []
+dependencies = ["dramatiq","requests"]
 dynamic = ["version"]
 
 [project.urls]
@@ -38,6 +38,9 @@ path = "sentry_dramatiq_cron_logger/__about__.py"
 dependencies = [
   "pytest",
   "pytest-cov",
+  "pytest-mock",
+  "black",
+  "isort"
 ]
 [tool.hatch.envs.default.scripts]
 cov = "pytest --cov-report=term-missing --cov-config=pyproject.toml --cov=sentry_dramatiq_cron_logger --cov=tests {args}"
